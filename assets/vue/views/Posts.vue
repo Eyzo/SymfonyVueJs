@@ -8,19 +8,11 @@
             <form>
                 <div class="form-row">
                     <div class="col-8">
-                        <input
-                                v-model="message"
-                                type="text"
-                                class="form-control"
-                        >
+                        <input v-model="message" type="text" class="form-control">
                     </div>
                     <div class="col-4">
-                        <button
-                                :disabled="message.length === 0 || isLoading"
-                                type="button"
-                                class="btn btn-primary"
-                                @click="createPost()"
-                        >
+                        <button :disabled="message.length === 0 || isLoading" type="button"
+                                class="btn btn-primary" @click="createPost()">
                             Create
                         </button>
                     </div>
@@ -28,38 +20,21 @@
             </form>
         </div>
 
-        <div
-                v-if="isLoading"
-                class="row col"
-        >
+        <div v-if="isLoading" class="row col">
             <p>Loading...</p>
         </div>
 
-        <div
-                v-else-if="hasError"
-                class="row col"
-        >
-            <div
-                    class="alert alert-danger"
-                    role="alert"
-            >
+        <div v-else-if="hasError" class="row col">
+            <div class="alert alert-danger" role="alert">
                 {{ error }}
             </div>
         </div>
 
-        <div
-                v-else-if="!hasPosts"
-                class="row col"
-        >
+        <div v-else-if="!hasPosts" class="row col">
             No posts!
         </div>
 
-        <div
-                v-for="post in posts"
-                v-else
-                :key="post.id"
-                class="row col"
-        >
+        <div v-for="post in posts" v-else :key="post.id" class="row col">
             <post :message="post.message" />
         </div>
     </div>

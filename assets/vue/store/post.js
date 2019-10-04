@@ -42,7 +42,7 @@ export default {
             state.posts.unshift(post)
         },
         [CREATING_POST_ERROR](state,error) {
-            state.isLoading + false;
+            state.isLoading = false;
             state.error = error;
             state.posts = [];
         },
