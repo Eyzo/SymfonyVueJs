@@ -9,6 +9,7 @@
                     <h5 class="card-title">{{ article.name }}</h5>
                     <p class="card-text">{{ article.description }}</p>
                     <p class="card-text"><small class="text-muted">{{ article.createdAt }}</small></p>
+                    <router-link class="btn btn-primary" :to="{ name: 'singleArticle', params: {  id: article.id } }">Voir l'article</router-link>
                 </div>
             </div>
         </div>

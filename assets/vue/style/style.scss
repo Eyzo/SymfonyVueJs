@@ -15,4 +15,13 @@ body {
     margin-top: 10px;
   }
 
+  .card-body {
+    flex: inherit;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.25rem;
+  }
+
 }

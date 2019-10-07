@@ -52,10 +52,10 @@ export default {
                 let response = await articleAPI.findAll();
                 store.commit(FETCHING_ARTICLE_SUCCESS, response.data);
                 return response.data;
-            } catch(error) {
-                store.commit(FETCHING_ARTICLE_ERROR,error);
+            } catch (error) {
+                store.commit(FETCHING_ARTICLE_ERROR, error);
                 return null;
             }
-        }
+        },
     }
 }

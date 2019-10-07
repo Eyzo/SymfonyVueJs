@@ -35,4 +35,15 @@ class ArticleController extends AbstractController
 
         return new JsonResponse($data,Response::HTTP_OK,[],true);
     }
+
+    /**
+     * @Rest\Get("/article/{id}",name="findArticle", requirements = { "id" = "\d+" })
+     */
+    public function findArticle(Article $article) {
+
+      $data = $this->serializer->serialize($article,JsonEncoder::FORMAT);
+
+      return new JsonResponse($data,Response::HTTP_OK,[],true);
+
+    }
 }
