@@ -34,7 +34,11 @@ Encore
     // but, you probably want this, unless you're building a single-page app
     .disableSingleRuntimeChunk()
 
+    //on active vue js
     .enableVueLoader()
+
+    //on active le sass
+    .enableSassLoader()
 
     /*
      * FEATURE CONFIG

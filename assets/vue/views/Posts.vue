@@ -20,9 +20,7 @@
             </form>
         </div>
 
-        <div v-if="isLoading" class="row col">
-            <p>Loading...</p>
-        </div>
+        <loader v-if="isLoading"></loader>
 
         <div v-else-if="hasError" class="row col">
             <div class="alert alert-danger" role="alert">
@@ -34,18 +32,24 @@
             No posts!
         </div>
 
-        <div v-for="post in posts" v-else :key="post.id" class="row col">
-            <post :message="post.message" />
-        </div>
+        <ul v-else class="list-group">
+            <li v-for="post in posts" :key="post.id" class="list-group-item">
+                <router-link :to="{ name: 'post', params: { id: post.id }}" active-class="active">
+                    <post :message="post.message" />
+                </router-link>
+            </li>
+        </ul>
     </div>
 </template>
 
 <script>
     import Post from "../components/Post";
+    import Loader from "../components/Loader";
 
     export default {
         name: "Posts",
         components: {
+            Loader,
             Post
         },
         data() {
@@ -83,3 +87,4 @@
         }
     };
 </script>
+

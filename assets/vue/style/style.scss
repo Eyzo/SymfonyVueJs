@@ -1,0 +1,18 @@
+@import "var";
+@import "loader";
+
+body {
+
+  background-color: $bgPage;
+
+  .white-box {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: $bgBox;
+  }
+
+  .card-deck {
+    margin-top: 10px;
+  }
+
+}
